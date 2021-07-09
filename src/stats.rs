@@ -73,6 +73,49 @@ impl Stats {
 
   /// Plot the statistics to the terminal.
   pub fn plot(&self) -> Result<()> {
+    let width = 1200;
+    let height = 800;
+    let (top, right, bottom, left) = (90, 10, 50, 120);
+
+    let x = ScaleLinear::new()
+      .set_domain(vec![0_f32, (self.longest().1 + 1.0) as f32])
+      .set_range(vec![0, width - left - right]);
+
+    let y = ScaleBand::new()
+      .set_domain(
+        sort_times(&self.data, false)
+          .iter()
+          .map(|(k, _)| k.to_owned())
+          .collect(),
+      )
+      .set_range(vec![0, height - top - bottom]);
+
+    let view = HorizontalBarView::new()
+      .set_x_scale(&x)
+      .set_y_scale(&y)
+      .load_data(
+        &self
+          .data
+          .iter()
+          .map(|(k, v)| (k.to_owned(), *v as f32))
+          .collect::<Vec<(String, f32)>>(),
+      )
+      .unwrap();
+
+    Chart::new()
+      .set_width(width)
+      .set_height(height)
+      .set_margins(top, right, bottom, left)
+      .add_title(String::from("Vim Plugin Start Times"))
+      .add_view(&view)
+      .add_axis_bottom(&x)
+      .add_axis_top(&x)
+      .add_axis_left(&y)
+      .add_left_axis_label("Name")
+      .add_bottom_axis_label("Time")
+      .save("plugins.svg")
+      .unwrap();
+
     Ok(())
   }
 

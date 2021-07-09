@@ -9,6 +9,7 @@ pub use std::{
 
 // dependencies
 pub use {
+  charts::{Chart, HorizontalBarView, ScaleBand, ScaleLinear},
   env_logger::{self},
   log::info,
   regex::{Regex, RegexBuilder},
