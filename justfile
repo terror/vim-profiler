@@ -32,3 +32,6 @@ usage:
 
 profile *args:
 	cargo run -- -c neovim {{args}}
+
+install:
+	cargo install --path .

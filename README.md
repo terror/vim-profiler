@@ -1,6 +1,6 @@
-## vim-profiler
+## vim-profiler 🕒
 
-A wrapper around `vim --startuptime` in Rust written for practice/fun. The binary is called
+`vim-profiler` is a wrapper around the `(n)vim --startuptime` command, written in Rust. The binary is called
 `vp` and has only been tested on a Unix based system.
 
 ### Installation

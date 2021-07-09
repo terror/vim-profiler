@@ -3,7 +3,7 @@ use crate::common::*;
 #[derive(Debug)]
 pub struct Worker {
   command: Command,
-  iter: i64,
+  iter:    i64,
 }
 
 impl Worker {
