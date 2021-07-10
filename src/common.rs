@@ -10,6 +10,7 @@ pub use std::{
 // dependencies
 pub use {
   charts::{Chart, HorizontalBarView, ScaleBand, ScaleLinear},
+  csv::Writer,
   env_logger::{self},
   log::info,
   regex::{Regex, RegexBuilder},
@@ -18,7 +19,7 @@ pub use {
 };
 
 // modules
-pub(crate) use crate::error;
+pub(crate) use crate::{error, utils};
 
 // test crates
 #[cfg(test)]
@@ -31,6 +32,5 @@ pub use crate::{
   opt::Opt,
   printer::Printer,
   stats::Stats,
-  utils::*,
   worker::Worker,
 };

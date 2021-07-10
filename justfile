@@ -34,7 +34,10 @@ profile *args:
 	cargo run -- -c neovim {{args}}
 
 plot:
-	cargo run -- -c neovim --plot
+	cargo run -- -c neovim --plot --verbose
+
+write:
+	cargo run -- --command neovim --iter 10 --export --verbose
 
 install:
 	cargo install --path .

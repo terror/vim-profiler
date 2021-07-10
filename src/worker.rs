@@ -17,7 +17,7 @@ impl Worker {
   ///
   /// This will accumulate each value over all iterations and finally
   /// return the map with average values.
-  pub fn run(&self) -> Result<HashMap<String, f64>> {
+  pub fn run(&self) -> Result<HashMap<String, Vec<f64>>> {
     let mut ret = HashMap::new();
 
     info!(
@@ -42,14 +42,10 @@ impl Worker {
       let plugins = self.parse()?;
 
       for (k, v) in plugins.iter() {
-        *ret.entry(k.to_owned()).or_insert(0.0) += v;
+        ret.entry(k.to_owned()).or_insert_with(Vec::new).push(*v);
       }
 
       self.clean()?;
-    }
-
-    for (_, v) in ret.iter_mut() {
-      *v /= self.iter as f64;
     }
 
     Ok(ret)

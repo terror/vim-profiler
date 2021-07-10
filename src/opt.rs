@@ -53,7 +53,7 @@ impl Opt {
     let data = worker.run()?;
 
     if !self.export && !self.plot {
-      Printer::new(self.reverse, self.count, self.precision).summary(&data);
+      Printer::new(self.reverse, self.count, self.precision).summary(utils::convert(&data));
       return Ok(());
     }
 
@@ -62,13 +62,11 @@ impl Opt {
     if self.export {
       info!("Writing statistics to CSV file ...");
       stats.write()?;
-      return Ok(());
     }
 
     if self.plot {
       info!("Plotting statistics ...");
       stats.plot()?;
-      return Ok(());
     }
 
     Ok(())
