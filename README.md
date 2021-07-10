@@ -5,9 +5,9 @@
 
 ### Demo
 
-Here is a quick demo showcasing a few of the main features such as `iter`, `plot` and `export`.
+Here is a quick demo showcasing the main functionality of the program.
 
-https://user-images.githubusercontent.com/31192478/125151591-2bc7a880-e115-11eb-9bd8-bf84dc9f6e6f.mp4
+[![asciicast](https://asciinema.org/a/ec3DhuwvAAoXCTs7pLdBG8JI6.svg)](https://asciinema.org/a/ec3DhuwvAAoXCTs7pLdBG8JI6)
 
 ### Installation
 
@@ -40,6 +40,44 @@ OPTIONS:
     -i, --iter <iter>              The number of iterations
     -x, --precision <precision>    Precision in the output
 ```
+
+### Exporting results
+
+This utility allows for exporting results to either in a `.svg` file in the form
+of a plot or in a `.csv` file, where extra statistics are written.
+
+#### Plot
+
+The plot visualizes the start times of each plugin in your plugin directory. If
+you invoke `vp` with the `--plot` flag, you will receive a plot in the form of
+an SVG file called `plugins.svg` in the current working directory that looks
+something like:
+
+![](./assets/plugins.svg)
+
+#### CSV
+
+The CSV file contains various other useful statistics such as:
+- The average start time across all iterations
+- The median start time across all iterations
+- The standard deviation from the mean
+
+If you invoke `vp` with the `--export` flag you will receive a CSV file with
+the additional statistics called `plugins.csv` in the current working directory
+that looks something like:
+
+|Plugin             |Average |Median  |Deviation|
+|-------------------|--------|--------|---------|
+|vim-airline        |9.92080 |9.46550 |1.13313  |
+|coc.nvim           |7.41410 |6.90600 |1.49125  |
+|vimwiki            |5.87170 |5.33350 |1.22342  |
+|vim-polyglot       |4.29400 |3.96600 |0.96789  |
+|tabular            |2.66950 |2.48300 |0.32859  |
+|vim-gitgutter      |2.44260 |2.36200 |0.40292  |
+|emmet-vim          |2.32240 |2.14300 |0.42288  |
+|vim-crypto         |1.87450 |1.78100 |0.40047  |
+|ale                |1.67460 |1.59300 |0.43811  |
+|fzf.vim            |1.08730 |0.98550 |0.29802  |
 
 ### Prior Art
 
