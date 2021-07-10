@@ -4,11 +4,12 @@ use crate::common::*;
 pub struct Worker {
   command: Command,
   iter:    i64,
+  sys:     bool,
 }
 
 impl Worker {
-  pub fn new(command: Command, iter: i64) -> Self {
-    Self { command, iter }
+  pub fn new(command: Command, iter: i64, sys: bool) -> Self {
+    Self { command, iter, sys }
   }
 
   /// Execute `vim --startuptime` in a child process.
@@ -75,6 +76,25 @@ impl Worker {
         }
       }
 
+      if self.sys {
+        for dir in &vec!["/usr", "/usr/local"] {
+          let re = RegexBuilder::new(&format!(
+            r"^\d+.\d+\s+\d+.\d+\s+(\d+.\d+): sourcing {}/.+/([^/]+.vim)\n",
+            dir
+          ))
+          .multi_line(true)
+          .build()
+          .unwrap();
+
+          for capture in re.captures_iter(&content) {
+            if let (Some(time), Some(plugin)) = (capture.get(1), capture.get(2)) {
+              *plugins.entry(plugin.as_str().to_owned()).or_insert(0.0) +=
+                time.as_str().parse::<f64>().unwrap();
+            }
+          }
+        }
+      }
+
       return Ok(plugins);
     }
 
@@ -131,7 +151,7 @@ mod tests {
       040.530  000.048  000.048: sourcing /Users/.vim/plugged/rust.vim/ftdetect/rust.vim
     "#;
 
-    let worker = Worker::new(Command::Vim, 1);
+    let worker = Worker::new(Command::Vim, 1, false);
     assert_eq!(
       worker.plugin_directory(&dedent(content)).unwrap().unwrap(),
       "/Users/.vim/plugged"
@@ -140,7 +160,7 @@ mod tests {
 
   #[test]
   fn plugin_directory_empty_content() {
-    let worker = Worker::new(Command::Vim, 1);
+    let worker = Worker::new(Command::Vim, 1, false);
     assert!(worker.plugin_directory("").unwrap().is_none());
   }
 
@@ -163,7 +183,7 @@ mod tests {
     let mut file = fs::File::create("vim.log").unwrap();
     file.write_all(dedent(content).as_bytes()).unwrap();
 
-    let worker = Worker::new(Command::Vim, 1);
+    let worker = Worker::new(Command::Vim, 1, false);
     let data = worker.parse().unwrap();
 
     println!("{:?}", data);

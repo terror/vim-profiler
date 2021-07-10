@@ -49,7 +49,7 @@ impl Opt {
     env_logger::init();
     info!("Starting run ...");
 
-    let worker = Worker::new(self.command, self.iter.unwrap_or(1));
+    let worker = Worker::new(self.command, self.iter.unwrap_or(1), self.sys);
     let data = worker.run()?;
 
     if !self.export && !self.plot {
