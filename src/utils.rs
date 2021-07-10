@@ -32,11 +32,13 @@ pub fn repeat(s: &str, n: usize) -> String {
 pub fn sort(data: &HashMap<String, f64>, reversed: bool) -> Vec<(String, f64)> {
   let mut sorted = data.iter().collect::<Vec<(&String, &f64)>>();
 
-  if reversed {
-    sorted.sort_by(|a, b| a.1.partial_cmp(b.1).unwrap());
-  } else {
-    sorted.sort_by(|a, b| b.1.partial_cmp(a.1).unwrap());
-  }
+  sorted.sort_by(|a, b| {
+    if reversed {
+      a.1.partial_cmp(b.1).unwrap()
+    } else {
+      b.1.partial_cmp(a.1).unwrap()
+    }
+  });
 
   sorted.iter().map(|(k, v)| (k.to_string(), **v)).collect()
 }
