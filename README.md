@@ -3,6 +3,12 @@
 `vim-profiler` is a wrapper around the `(n)vim --startuptime` command, written in Rust. The binary is called
 `vp` and has only been tested on a Unix based system.
 
+### Demo
+
+Here is a quick demo showcasing a few of the main features such as `iter`, `plot` and `export`.
+
+https://user-images.githubusercontent.com/31192478/125151591-2bc7a880-e115-11eb-9bd8-bf84dc9f6e6f.mp4
+
 ### Installation
 
 You can install `vim-profiler` with the rust package manager Cargo:
@@ -22,7 +28,7 @@ USAGE:
 FLAGS:
     -e, --export     Export the results to a CSV file
     -h, --help       Prints help information
-    -p, --plot       Plot the data in the terminal
+    -p, --plot       Plot the data and save it to a SVG file
     -r, --reverse    Display the plugin times in reverse order (fastest first)
     -s, --sys        Show system plugins in the output
     -V, --version    Prints version information

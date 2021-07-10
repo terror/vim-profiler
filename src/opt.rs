@@ -24,7 +24,7 @@ pub struct Opt {
   verbose: bool,
 
   #[structopt(short, long)]
-  /// Plot the data in the terminal.
+  /// Plot the data and save it to a SVG file
   plot: bool,
 
   #[structopt(short, long)]
