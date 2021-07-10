@@ -22,8 +22,10 @@ impl Worker {
     let mut ret = HashMap::new();
 
     info!(
-      "Executing `{} --startuptime` and parsing the log file {} times",
-      self.command, self.iter
+      "Executing `{} --startuptime` and parsing the log file {} time{}",
+      self.command,
+      self.iter,
+      if self.iter > 1 { "s" } else { "" }
     );
 
     for _ in 0..self.iter {
