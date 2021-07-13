@@ -68,18 +68,18 @@ If you invoke `vp` with the `--export` flag you will receive a CSV file with
 the additional statistics called `plugins.csv` in the current working directory
 that looks something like:
 
-|Plugin             |Average |Median  |Deviation|
-|-------------------|--------|--------|---------|
-|vim-airline        |9.92080 |9.46550 |1.13313  |
-|coc.nvim           |7.41410 |6.90600 |1.49125  |
-|vimwiki            |5.87170 |5.33350 |1.22342  |
-|vim-polyglot       |4.29400 |3.96600 |0.96789  |
-|tabular            |2.66950 |2.48300 |0.32859  |
-|vim-gitgutter      |2.44260 |2.36200 |0.40292  |
-|emmet-vim          |2.32240 |2.14300 |0.42288  |
-|vim-crypto         |1.87450 |1.78100 |0.40047  |
-|ale                |1.67460 |1.59300 |0.43811  |
-|fzf.vim            |1.08730 |0.98550 |0.29802  |
+|Plugin             |Longest |Shortest|Median  |Average |Deviation|
+|-------------------|--------|--------|--------|--------|---------|
+|vim-airline        |11.59700|9.37200 |11.05550|10.83430|0.64257  |
+|coc.nvim           |9.26900 |6.92700 |8.26750 |8.03870 |0.74723  |
+|vimwiki            |7.74400 |5.25200 |6.83400 |6.53550 |0.81209  |
+|vim-polyglot       |7.01600 |3.62900 |4.22350 |4.70690 |1.09417  |
+|tabular            |4.18500 |2.53700 |3.21100 |3.19110 |0.50241  |
+|vim-gitgutter      |3.35000 |2.10800 |2.63900 |2.70540 |0.45181  |
+|emmet-vim          |3.36700 |2.16800 |2.30200 |2.45460 |0.34839  |
+|ale                |3.21800 |1.54900 |1.85950 |2.04930 |0.52316  |
+|vim-crypto         |2.99100 |1.61400 |1.81100 |2.03940 |0.43480  |
+|fzf.vim            |1.83000 |0.94600 |1.13900 |1.20210 |0.26501  |
 
 ### Prior Art
 
