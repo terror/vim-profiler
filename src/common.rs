@@ -29,8 +29,10 @@ pub use {float_cmp::approx_eq, textwrap::dedent};
 pub use crate::{
   command::Command,
   error::{Error, Result},
+  export::Export,
   opt::Opt,
+  plugin::Plugin,
+  plugins::Plugins,
   printer::Printer,
-  stats::Stats,
   worker::Worker,
 };

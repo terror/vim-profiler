@@ -49,24 +49,23 @@ impl Opt {
     env_logger::init();
     info!("Starting run ...");
 
-    let worker = Worker::new(self.command, self.iter.unwrap_or(1), self.sys);
-    let data = worker.run()?;
+    let plugins = Worker::new(self.command, self.iter.unwrap_or(1), self.sys)
+      .run()?
+      .sort(self.reverse);
 
     if !self.export && !self.plot {
-      Printer::new(self.reverse, self.count, self.precision).summary(utils::convert(&data));
+      Printer::new(self.reverse, self.count, self.precision).summary(&plugins);
       return Ok(());
     }
 
-    let stats = Stats::new(data);
-
     if self.export {
       info!("Writing statistics to CSV file ...");
-      stats.write()?;
+      Export::write(&plugins)?;
     }
 
     if self.plot {
       info!("Plotting statistics ...");
-      stats.plot()?;
+      Export::plot(&plugins)?;
     }
 
     Ok(())

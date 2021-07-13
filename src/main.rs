@@ -3,9 +3,11 @@ use crate::common::*;
 mod command;
 mod common;
 mod error;
+mod export;
 mod opt;
+mod plugin;
+mod plugins;
 mod printer;
-mod stats;
 mod utils;
 mod worker;
 

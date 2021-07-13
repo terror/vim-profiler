@@ -18,7 +18,7 @@ impl Worker {
   ///
   /// This will accumulate each value over all iterations and finally
   /// return the map with average values.
-  pub fn run(&self) -> Result<HashMap<String, Vec<f64>>> {
+  pub fn run(&self) -> Result<Vec<Plugin>> {
     let mut ret = HashMap::new();
 
     info!(
@@ -51,7 +51,12 @@ impl Worker {
       self.clean()?;
     }
 
-    Ok(ret)
+    Ok(
+      ret
+        .iter()
+        .map(|(k, v)| Plugin::new(k.to_owned(), v.to_owned()))
+        .collect::<Vec<Plugin>>(),
+    )
   }
 
   /// Parse the contents of `vim.log`.
