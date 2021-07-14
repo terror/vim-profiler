@@ -1,6 +1,6 @@
 [package]
 name        = "vim-profiler"
-version     = "0.0.1"
+version     = "0.0.2"
 description = "A vim profiling tool"
 authors     = ["Liam <liam@scalzulli.com>"]
 edition     = "2018"
