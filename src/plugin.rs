@@ -69,15 +69,19 @@ mod tests {
     pub average:   f64,
     pub median:    f64,
     pub deviation: f64,
+    pub min:       f64,
+    pub max:       f64,
   }
 
   impl Fixture {
-    pub fn new(key: String, average: f64, median: f64, deviation: f64) -> Self {
+    pub fn new(key: String, average: f64, median: f64, deviation: f64, min: f64, max: f64) -> Self {
       Self {
         key,
         average,
         median,
         deviation,
+        min,
+        max,
       }
     }
   }
@@ -92,9 +96,30 @@ mod tests {
     ];
 
     let res = vec![
-      Fixture::new(String::from("vim-rooter"), 6.72500, 7.2, 3.355126674210677),
-      Fixture::new(String::from("vim-prettier"), 8.0, 4.65, 6.4996153732355575),
-      Fixture::new(String::from("vim-just"), 4.75, 4.6, 2.0754517580517255),
+      Fixture::new(
+        String::from("vim-rooter"),
+        6.72500,
+        7.2,
+        3.355126674210677,
+        2.0,
+        10.5,
+      ),
+      Fixture::new(
+        String::from("vim-prettier"),
+        8.0,
+        4.65,
+        6.4996153732355575,
+        3.5,
+        19.2,
+      ),
+      Fixture::new(
+        String::from("vim-just"),
+        4.75,
+        4.6,
+        2.0754517580517255,
+        2.0,
+        7.8,
+      ),
     ];
 
     for (a, b) in fake {
@@ -154,31 +179,29 @@ mod tests {
 
   #[test]
   fn max() {
-    let (plugins, _) = setup();
-    assert!(approx_eq!(
-      f64,
-      plugins
-        .iter()
-        .map(|(_, v)| v.to_owned())
-        .collect::<Vec<Plugin>>()
-        .max(),
-      8.0,
-      ulps = 2
-    ));
+    let (plugins, res) = setup();
+
+    for fixture in res {
+      assert!(approx_eq!(
+        f64,
+        plugins[&fixture.key].max(),
+        fixture.max,
+        ulps = 2
+      ));
+    }
   }
 
   #[test]
   fn min() {
-    let (plugins, _) = setup();
-    assert!(approx_eq!(
-      f64,
-      plugins
-        .iter()
-        .map(|(_, v)| v.to_owned())
-        .collect::<Vec<Plugin>>()
-        .min(),
-      4.75,
-      ulps = 2
-    ));
+    let (plugins, res) = setup();
+
+    for fixture in res {
+      assert!(approx_eq!(
+        f64,
+        plugins[&fixture.key].min(),
+        fixture.min,
+        ulps = 2
+      ));
+    }
   }
 }
