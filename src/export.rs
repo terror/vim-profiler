@@ -7,14 +7,7 @@ impl Export {
     let mut writer = Writer::from_path("plugins.csv").unwrap();
 
     writer
-      .write_record(&[
-        "Plugin",
-        "Longest",
-        "Shortest",
-        "Median",
-        "Average",
-        "Deviation",
-      ])
+      .write_record(&["Plugin", "Max", "Min", "Median", "Average", "Deviation"])
       .unwrap();
 
     for plugin in plugins.iter() {
