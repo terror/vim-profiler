@@ -21,7 +21,7 @@ $ cargo install vim-profiler
 ### Usage
 
 ```
-vim-profiler 0.0.1
+vim-profiler 0.0.2
 A vim profiling tool.
 
 USAGE:
@@ -39,6 +39,7 @@ FLAGS:
 OPTIONS:
     -c, --command <command>        The command to run, e.g vim or neovim [default: vim]
     -n, --count <count>            The number of plugins to list in the output
+    -f, --file <file>              A file to open
     -i, --iter <iter>              The number of iterations
     -x, --precision <precision>    Precision in the output
 ```

@@ -5,11 +5,17 @@ pub struct Worker {
   command: Command,
   iter:    i64,
   sys:     bool,
+  file:    Option<PathBuf>,
 }
 
 impl Worker {
-  pub fn new(command: Command, iter: i64, sys: bool) -> Self {
-    Self { command, iter, sys }
+  pub fn new(command: Command, iter: i64, sys: bool, file: Option<PathBuf>) -> Self {
+    Self {
+      command,
+      iter,
+      sys,
+      file,
+    }
   }
 
   /// Execute `vim --startuptime` in a child process.
@@ -28,10 +34,19 @@ impl Worker {
       if self.iter > 1 { "s" } else { "" }
     );
 
+    let file = self
+      .file
+      .as_ref()
+      .unwrap_or(&PathBuf::new())
+      .to_str()
+      .unwrap()
+      .to_owned();
+
     for _ in 0..self.iter {
       let mut child = Cmd::new(format!("{}", self.command))
         .stdout(Stdio::piped())
         .stderr(Stdio::piped())
+        .arg(&file)
         .arg("--startuptime")
         .arg("vim.log")
         .arg("-f")
@@ -158,7 +173,7 @@ mod tests {
       040.530  000.048  000.048: sourcing /Users/.vim/plugged/rust.vim/ftdetect/rust.vim
     "#;
 
-    let worker = Worker::new(Command::Vim, 1, false);
+    let worker = Worker::new(Command::Vim, 1, false, None);
     assert_eq!(
       worker.plugin_directory(&dedent(content)).unwrap().unwrap(),
       "/Users/.vim/plugged"
@@ -167,7 +182,7 @@ mod tests {
 
   #[test]
   fn plugin_directory_empty_content() {
-    let worker = Worker::new(Command::Vim, 1, false);
+    let worker = Worker::new(Command::Vim, 1, false, None);
     assert!(worker.plugin_directory("").unwrap().is_none());
   }
 
@@ -190,7 +205,7 @@ mod tests {
     let mut file = fs::File::create("vim.log").unwrap();
     file.write_all(dedent(content).as_bytes()).unwrap();
 
-    let worker = Worker::new(Command::Vim, 1, false);
+    let worker = Worker::new(Command::Vim, 1, false, None);
     let data = worker.parse().unwrap();
 
     println!("{:?}", data);
