@@ -24,6 +24,9 @@ fmt:
 check:
  cargo check
 
+la:
+	actionlint
+
 watch +COMMAND='test':
 	cargo watch --clear --exec "{{COMMAND}}"
 
