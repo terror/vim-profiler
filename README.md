@@ -22,7 +22,7 @@ $ cargo install vim-profiler
 ### Usage
 
 ```
-vim-profiler 0.0.2
+vim-profiler 0.0.3
 A vim profiling tool.
 
 USAGE:
