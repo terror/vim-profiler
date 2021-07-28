@@ -75,7 +75,7 @@ jobs:
 
     - name: Install just
       run: |
-        if ! which just; then
+        if ! which -v just; then
           git clone https://github.com/casey/just
           cd just
           git checkout v0.9.3
