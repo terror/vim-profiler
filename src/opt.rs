@@ -38,6 +38,10 @@ pub struct Opt {
   #[structopt(short, long)]
   /// Display the plugin times in reverse order (fastest first).
   reverse: bool,
+
+  #[structopt(short, long)]
+  /// A file to open
+  file: Option<PathBuf>,
 }
 
 impl Opt {
@@ -49,7 +53,7 @@ impl Opt {
     env_logger::init();
     info!("Starting run ...");
 
-    let plugins = Worker::new(self.command, self.iter.unwrap_or(1), self.sys)
+    let plugins = Worker::new(self.command, self.iter.unwrap_or(1), self.sys, self.file)
       .run()?
       .sort(self.reverse);
 
