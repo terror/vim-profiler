@@ -36,13 +36,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Download actionlint
+      id: actionlint
+      run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+
+    - name: Check Github Actions Workflow
+      env:
+        SHELLCHECK_OPTS: "-e SC2006 -e SC2002 -e SC2050"
+      run: ${{ steps.actionlint.outputs.executable }} -color
+
     # An issue with BSD Tar causes sporadic failures on macOS.
     # c.f https://github.com/actions/cache/issues/403
     - name: Install GNU Tar
-      if: matrix.os == 'macos-latest'
+      if: ${{ matrix.os == 'macos-latest' }}
       run: |
         brew install gnu-tar
-        echo /usr/local/opt/gnu-tar/libexec/gnubin > $GITHUB_PATH
+        echo /usr/local/opt/gnu-tar/libexec/gnubin > "$GITHUB_PATH"
 
     - name: Cache
       uses: actions/cache@v2
@@ -57,7 +66,7 @@ jobs:
       uses: actions-rs/toolchain@v1
       with:
         toolchain: nightly
-        target: ${{matrix.target}}
+        target: ${{ matrix.target }}
         profile: minimal
         components: rustfmt
 
@@ -85,7 +94,7 @@ jobs:
       run: just ci
 
     - name: Forbid
-      if: matrix.os == 'ubuntu-latest'
+      if: ${{ matrix.os == 'ubuntu-latest' }}
       run: |
         sudo apt-get install ripgrep
         ./bin/forbid
