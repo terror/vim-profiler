@@ -1,7 +1,9 @@
 // stdlib
 pub use std::{
   collections::HashMap,
-  env, fmt, fs,
+  env,
+  fmt::{self, Display, Formatter},
+  fs,
   io::{self, prelude::*},
   iter,
   path::PathBuf,
@@ -22,18 +24,15 @@ pub use {
 // modules
 pub(crate) use crate::{error, utils};
 
-// test crates
-#[cfg(test)]
-pub use {float_cmp::approx_eq, textwrap::dedent};
-
 // structs and enums
 pub use crate::{
-  command::Command,
-  error::{Error, Result},
-  export::Export,
-  opt::Opt,
-  plugin::Plugin,
-  plugins::Plugins,
-  printer::Printer,
-  worker::Worker,
+  command::Command, error::Error, export::Export, opt::Opt, plugin::Plugin, plugins::Plugins,
+  printer::Printer, worker::Worker,
 };
+
+// type aliases
+pub type Result<T, E = Error> = std::result::Result<T, E>;
+
+// test dependencies
+#[cfg(test)]
+pub use {float_cmp::approx_eq, textwrap::dedent};
