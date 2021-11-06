@@ -135,7 +135,7 @@ impl Worker {
     ).multi_line(true).build().unwrap();
 
     let mut counts = HashMap::new();
-    for capture in re.captures_iter(&content) {
+    for capture in re.captures_iter(content) {
       if let Some(directory) = capture.get(1) {
         if !directory.as_str().starts_with("/usr") {
           *counts.entry(directory.as_str()).or_insert(0) += 1;
@@ -146,7 +146,7 @@ impl Worker {
     Ok(
       counts
         .iter()
-        .max_by(|a, b| a.1.cmp(&b.1))
+        .max_by(|a, b| a.1.cmp(b.1))
         .map(|(k, _v)| k.to_string()),
     )
   }
