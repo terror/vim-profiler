@@ -80,6 +80,10 @@ impl Worker {
   ///                   ^^^^^^^                    ^^^^^^
   pub fn parse(&self) -> Result<HashMap<String, f64>> {
     let content = fs::read_to_string("vim.log").context(error::ReadLog)?;
+    // in case the log contains windows-style path separators, they get replaced
+    // with unix-style path separators.
+    // that saves us from a more compicated regex pattern later on.
+    let content = content.replace("\\","/");
 
     if let Some(plugin_directory) = self.plugin_directory(&content)? {
       let re = RegexBuilder::new(&format!(
