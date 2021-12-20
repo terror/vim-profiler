@@ -22,16 +22,14 @@ $ cargo install vim-profiler
 ### Usage
 
 ```
-vim-profiler 0.0.3
+vim-profiler 0.0.4
 A vim profiling tool.
 
 USAGE:
     vp [FLAGS] [OPTIONS]
 
 FLAGS:
-    -e, --export     Export the results to a CSV file
     -h, --help       Prints help information
-    -p, --plot       Plot the data and save it to a SVG file
     -r, --reverse    Display the plugin times in reverse order (fastest first)
     -s, --sys        Show system plugins in the output
     -V, --version    Prints version information
@@ -40,8 +38,10 @@ FLAGS:
 OPTIONS:
     -c, --command <command>        The command to run, e.g vim or neovim [default: vim]
     -n, --count <count>            The number of plugins to list in the output
+    -e, --export <export>          Export the results to a CSV file
     -f, --file <file>              A file to open
     -i, --iter <iter>              The number of iterations
+    -p, --plot <plot>              Plot the data and save it to a SVG file
     -x, --precision <precision>    Precision in the output
 ```
 
@@ -54,8 +54,7 @@ of a plot or in a `.csv` file, where extra statistics are written.
 
 The plot visualizes the start times of each plugin in your plugin directory. If
 you invoke `vp` with the `--plot` flag, you will receive a plot in the form of
-an SVG file called `plugins.svg` in the current working directory that looks
-something like:
+an SVG file in the specified path that looks something like:
 
 ![](./assets/plugins.svg)
 
@@ -67,8 +66,8 @@ The CSV file contains various other useful statistics such as:
 - The standard deviation from the mean
 
 If you invoke `vp` with the `--export` flag you will receive a CSV file with
-the additional statistics called `plugins.csv` in the current working directory
-that looks something like:
+the additional statistics called in the specified path that looks something
+like:
 
 | Plugin        | Max      | Min     | Median   | Average  | Deviation |
 |---------------|----------|---------|----------|----------|-----------|

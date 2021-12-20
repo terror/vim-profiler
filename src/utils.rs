@@ -7,7 +7,7 @@ pub fn repeat(s: &str, n: usize) -> String {
 
 #[cfg(test)]
 mod tests {
-  use crate::common::*;
+  use super::*;
 
   #[test]
   fn test_repeat() {
@@ -18,7 +18,7 @@ mod tests {
     ];
 
     for (a, b, c) in cases {
-      assert_eq!(utils::repeat(a, b), c);
+      assert_eq!(repeat(a, b), c);
     }
   }
 }

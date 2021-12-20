@@ -14,6 +14,9 @@ mod worker;
 fn main() {
   match Opt::from_args().run() {
     Ok(()) => {}
-    Err(e) => eprintln!("{}", e),
+    Err(e) => {
+      eprintln!("{}", e);
+      process::exit(1);
+    }
   }
 }

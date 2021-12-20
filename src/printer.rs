@@ -28,7 +28,7 @@ impl Printer {
     );
 
     println!("{}", header);
-    println!("{}", utils::repeat("=", header.len()));
+    println!("{}", repeat("=", header.len()));
 
     for (i, plugin) in plugins.iter().enumerate() {
       println!(
@@ -39,6 +39,6 @@ impl Printer {
       );
     }
 
-    println!("{}", utils::repeat("=", header.len()));
+    println!("{}", repeat("=", header.len()));
   }
 }

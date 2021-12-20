@@ -37,10 +37,10 @@ profile *args:
 	cargo run -- -c neovim {{args}}
 
 plot:
-	cargo run -- -c neovim --plot --verbose
+	cargo run -- -c neovim --plot assets/plugins.svg --verbose
 
 write:
-	cargo run -- --command neovim --iter 10 --export --verbose
+	cargo run -- --command neovim --iter 10 --export assets/plugins.csv --verbose
 
 install:
 	cargo install --path .
