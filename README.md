@@ -36,12 +36,12 @@ FLAGS:
     -v, --verbose    Add informative messages during program execution
 
 OPTIONS:
-    -c, --command <command>        The command to run, e.g vim or neovim [default: vim]
-    -n, --count <count>            The number of plugins to list in the output
-    -e, --export <path>            Export the results to a CSV file
-    -f, --file <file>              A file to open
-    -i, --iter <iter>              The number of iterations
-    -p, --plot <path>              Plot the data and save it to a SVG file
+    -c, --command   <command>      The command to run, e.g vim or neovim [default: vim]
+    -n, --count     <count>        The number of plugins to list in the output
+    -e, --export    <path>         Export the results to a CSV file
+    -f, --file      <file>         A file to open
+    -i, --iter      <iter>         The number of iterations
+    -p, --plot      <path>         Plot the data and save it to a SVG file
     -x, --precision <precision>    Precision in the output
 ```
 
@@ -53,7 +53,7 @@ of a plot or in a `.csv` file, where extra statistics are written.
 #### Plot
 
 The plot visualizes the start times of each plugin in your plugin directory. If
-you invoke `vp` with the `--plot` flag, you will receive a plot in the form of
+you invoke `vp` with the `--plot` option, you will receive a plot in the form of
 an SVG file in the specified path that looks something like:
 
 ![](./assets/plugins.svg)
@@ -65,7 +65,7 @@ The CSV file contains various other useful statistics such as:
 - The median start time across all iterations
 - The standard deviation from the mean
 
-If you invoke `vp` with the `--export` flag you will receive a CSV file with
+If you invoke `vp` with the `--export` option you will receive a CSV file with
 the additional statistics called in the specified path that looks something
 like:
 
