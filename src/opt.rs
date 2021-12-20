@@ -2,7 +2,7 @@ use crate::common::*;
 
 #[derive(Debug, StructOpt)]
 #[structopt(name = "vim-profiler", about = "A vim profiling tool.")]
-pub struct Opt {
+pub(crate) struct Opt {
   #[structopt(short, long, parse(try_from_str = Command::parse), default_value = "vim")]
   /// The command to run, e.g vim or neovim.
   command: Command,
@@ -25,11 +25,11 @@ pub struct Opt {
 
   #[structopt(short, long)]
   /// Plot the data and save it to a SVG file
-  plot: bool,
+  plot: Option<PathBuf>,
 
   #[structopt(short, long)]
   /// Export the results to a CSV file.
-  export: bool,
+  export: Option<PathBuf>,
 
   #[structopt(short, long)]
   /// Show system plugins in the output.
@@ -57,19 +57,19 @@ impl Opt {
       .run()?
       .sort(self.reverse);
 
-    if !self.export && !self.plot {
+    if self.export.is_none() && self.plot.is_none() {
       Printer::new(self.reverse, self.count, self.precision).summary(&plugins);
       return Ok(());
     }
 
-    if self.export {
+    if let Some(path) = self.export {
       info!("Writing statistics to CSV file ...");
-      Export::write(&plugins)?;
+      write(path, &plugins)?;
     }
 
-    if self.plot {
+    if let Some(path) = self.plot {
       info!("Plotting statistics ...");
-      Export::plot(&plugins)?;
+      plot(path, &plugins)?;
     }
 
     Ok(())

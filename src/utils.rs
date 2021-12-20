@@ -1,13 +1,13 @@
 use crate::common::*;
 
 /// Repeats the string `s`, `n` times.
-pub fn repeat(s: &str, n: usize) -> String {
+pub(crate) fn repeat(s: &str, n: usize) -> String {
   iter::repeat(s).take(n).collect::<Vec<_>>().join("")
 }
 
 #[cfg(test)]
 mod tests {
-  use crate::common::*;
+  use super::*;
 
   #[test]
   fn test_repeat() {
@@ -18,7 +18,7 @@ mod tests {
     ];
 
     for (a, b, c) in cases {
-      assert_eq!(utils::repeat(a, b), c);
+      assert_eq!(repeat(a, b), c);
     }
   }
 }

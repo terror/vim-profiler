@@ -7,127 +7,115 @@ Vim Plugin Start Times
 </g>
 <g class="x-axis" transform="translate(120,90)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1" x1="0" x2="1070" y1="0" y2="0"/>
-<g class="tick" transform="translate(2.0776699,0)">
+<g class="tick" transform="translate(1.0263789,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 0
 </text>
 </g>
-<g class="tick" transform="translate(111.42872,0)">
+<g class="tick" transform="translate(129.32375,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 1
 </text>
 </g>
-<g class="tick" transform="translate(220.77979,0)">
+<g class="tick" transform="translate(257.6211,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 2
 </text>
 </g>
-<g class="tick" transform="translate(330.13083,0)">
+<g class="tick" transform="translate(385.91843,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 3
 </text>
 </g>
-<g class="tick" transform="translate(439.48187,0)">
+<g class="tick" transform="translate(514.2158,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 4
 </text>
 </g>
-<g class="tick" transform="translate(548.8329,0)">
+<g class="tick" transform="translate(642.5132,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 5
 </text>
 </g>
-<g class="tick" transform="translate(658.18396,0)">
+<g class="tick" transform="translate(770.8105,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 6
 </text>
 </g>
-<g class="tick" transform="translate(767.53503,0)">
+<g class="tick" transform="translate(899.1079,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 7
 </text>
 </g>
-<g class="tick" transform="translate(876.88605,0)">
+<g class="tick" transform="translate(1027.4053,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
 8
-</text>
-</g>
-<g class="tick" transform="translate(986.2371,0)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="-6"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,-16)" x="0" y="-16">
-9
 </text>
 </g>
 </g>
 <g class="x-axis" transform="translate(120,750)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1" x1="0" x2="1070" y1="0" y2="0"/>
-<g class="tick" transform="translate(2.0776699,0)">
+<g class="tick" transform="translate(1.0263789,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 0
 </text>
 </g>
-<g class="tick" transform="translate(111.42872,0)">
+<g class="tick" transform="translate(129.32375,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 1
 </text>
 </g>
-<g class="tick" transform="translate(220.77979,0)">
+<g class="tick" transform="translate(257.6211,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 2
 </text>
 </g>
-<g class="tick" transform="translate(330.13083,0)">
+<g class="tick" transform="translate(385.91843,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 3
 </text>
 </g>
-<g class="tick" transform="translate(439.48187,0)">
+<g class="tick" transform="translate(514.2158,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 4
 </text>
 </g>
-<g class="tick" transform="translate(548.8329,0)">
+<g class="tick" transform="translate(642.5132,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 5
 </text>
 </g>
-<g class="tick" transform="translate(658.18396,0)">
+<g class="tick" transform="translate(770.8105,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 6
 </text>
 </g>
-<g class="tick" transform="translate(767.53503,0)">
+<g class="tick" transform="translate(899.1079,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 7
 </text>
 </g>
-<g class="tick" transform="translate(876.88605,0)">
+<g class="tick" transform="translate(1027.4053,0)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
 8
-</text>
-</g>
-<g class="tick" transform="translate(986.2371,0)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="0" y1="0" y2="6"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="middle" transform="rotate(0,0,16)" x="0" y="16">
-9
 </text>
 </g>
 <text fill="#777" font-family="sans-serif" font-size="14px" text-anchor="middle" transform="rotate(0)" x="535" y="42">
@@ -136,367 +124,199 @@ Time
 </g>
 <g class="y-axis" transform="translate(120,90)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1" x1="0" x2="0" y1="0" y2="660"/>
-<g class="tick" transform="translate(0,12.059797)">
+<g class="tick" transform="translate(0,22.54657)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-airline
+barbar.nvim
 </text>
 </g>
-<g class="tick" transform="translate(0,33.98671)">
+<g class="tick" transform="translate(0,63.54036)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-coc.nvim
+nvim-treesitter
 </text>
 </g>
-<g class="tick" transform="translate(0,55.91362)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vimwiki
-</text>
-</g>
-<g class="tick" transform="translate(0,77.84053)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-polyglot
-</text>
-</g>
-<g class="tick" transform="translate(0,99.76744)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-tabular
-</text>
-</g>
-<g class="tick" transform="translate(0,121.69435)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-gitgutter
-</text>
-</g>
-<g class="tick" transform="translate(0,143.62126)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-emmet-vim
-</text>
-</g>
-<g class="tick" transform="translate(0,165.54817)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-crypto
-</text>
-</g>
-<g class="tick" transform="translate(0,187.47508)">
+<g class="tick" transform="translate(0,104.53415)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
 ale
 </text>
 </g>
-<g class="tick" transform="translate(0,209.402)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-fzf.vim
-</text>
-</g>
-<g class="tick" transform="translate(0,231.3289)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-airline-themes
-</text>
-</g>
-<g class="tick" transform="translate(0,253.25581)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-eunuch
-</text>
-</g>
-<g class="tick" transform="translate(0,275.1827)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-fzf
-</text>
-</g>
-<g class="tick" transform="translate(0,297.10962)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-ultisnips
-</text>
-</g>
-<g class="tick" transform="translate(0,319.03653)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-prettier
-</text>
-</g>
-<g class="tick" transform="translate(0,340.96344)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-surround
-</text>
-</g>
-<g class="tick" transform="translate(0,362.89035)">
+<g class="tick" transform="translate(0,145.52794)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
 editorconfig-vim
 </text>
 </g>
-<g class="tick" transform="translate(0,384.81726)">
+<g class="tick" transform="translate(0,186.52173)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-auto-pairs
+telescope.nvim
 </text>
 </g>
-<g class="tick" transform="translate(0,406.74417)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-commentary
-</text>
-</g>
-<g class="tick" transform="translate(0,428.67108)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-clang-format
-</text>
-</g>
-<g class="tick" transform="translate(0,450.598)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-operator-sort
-</text>
-</g>
-<g class="tick" transform="translate(0,472.5249)">
+<g class="tick" transform="translate(0,227.51552)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
 vim-rooter
 </text>
 </g>
-<g class="tick" transform="translate(0,494.4518)">
+<g class="tick" transform="translate(0,268.5093)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-highlightedyank
+open-browser.vim
 </text>
 </g>
-<g class="tick" transform="translate(0,516.3787)">
+<g class="tick" transform="translate(0,309.5031)">
+<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
+<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
+vim-commentary
+</text>
+</g>
+<g class="tick" transform="translate(0,350.4969)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
 vim-easy-align
 </text>
 </g>
-<g class="tick" transform="translate(0,538.30566)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-rust.vim
-</text>
-</g>
-<g class="tick" transform="translate(0,560.23254)">
-<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
-<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-vim-operator-user
-</text>
-</g>
-<g class="tick" transform="translate(0,582.1595)">
+<g class="tick" transform="translate(0,391.49066)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
 vim-startify
 </text>
 </g>
-<g class="tick" transform="translate(0,604.0864)">
+<g class="tick" transform="translate(0,432.48447)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-cargo.vim
+plantuml-syntax
 </text>
 </g>
-<g class="tick" transform="translate(0,626.0133)">
+<g class="tick" transform="translate(0,473.47827)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-rainbow
+vim-toml
 </text>
 </g>
-<g class="tick" transform="translate(0,647.9402)">
+<g class="tick" transform="translate(0,514.47205)">
 <line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
 <text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
-goyo.vim
+vim-just
+</text>
+</g>
+<g class="tick" transform="translate(0,555.4658)">
+<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
+<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
+nvim-web-devicons
+</text>
+</g>
+<g class="tick" transform="translate(0,596.45966)">
+<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
+<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
+plenary.nvim
+</text>
+</g>
+<g class="tick" transform="translate(0,637.4534)">
+<line shape-rendering="crispEdges" stroke="#bbbbbb" stroke-width="1px" x1="0" x2="-6" y1="0" y2="0"/>
+<text dy=".35em" fill="#777" font-family="sans-serif" font-size="12px" text-anchor="end" transform="rotate(0,-12,0)" x="-12" y="0">
+plantuml-previewer.vim
 </text>
 </g>
 </g>
 <g class="g-view" transform="translate(120,90)">
 <g>
-<g class="bar" transform="translate(0,199.53488)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="91.41748" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="105.49515" y="9.867109">
-0.836
+<g class="bar" transform="translate(0,4.099365)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="940.6762" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="953.7026" y="18.447205">
+7.332
 </text>
 </g>
-<g class="bar" transform="translate(0,133.75415)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="211.26625" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="225.34392" y="9.867109">
-1.932
+<g class="bar" transform="translate(0,414.03726)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="10.7769785" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="23.803356" y="18.447205">
+0.084
 </text>
 </g>
-<g class="bar" transform="translate(0,67.97342)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="406.02045" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="420.0981" y="9.867109">
-3.713
+<g class="bar" transform="translate(0,537.0186)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="7.8261385" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="20.852516" y="18.447205">
+0.061
 </text>
 </g>
-<g class="bar" transform="translate(0,396.87708)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="29.852837" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="43.930504" y="9.867109">
-0.273
+<g class="bar" transform="translate(0,373.04346)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="14.882494" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="27.908873" y="18.447205">
+0.116
 </text>
 </g>
-<g class="bar" transform="translate(0,2.192688)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="958.5713" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="972.649" y="9.867109">
-8.766
+<g class="bar" transform="translate(0,45.093155)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="238.88968" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="251.91606" y="18.447205">
+1.862
 </text>
 </g>
-<g class="bar" transform="translate(0,462.6578)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="25.041391" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="39.11906" y="9.867109">
-0.229
+<g class="bar" transform="translate(0,291.0559)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="21.169065" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="34.195442" y="18.447205">
+0.165
 </text>
 </g>
-<g class="bar" transform="translate(0,484.58472)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="21.651506" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="35.729176" y="9.867109">
-0.198
+<g class="bar" transform="translate(0,496.02484)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="8.082734" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="21.109112" y="18.447205">
+0.063
 </text>
 </g>
-<g class="bar" transform="translate(0,265.3156)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="72.390396" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="86.46806" y="9.867109">
-0.662
+<g class="bar" transform="translate(0,332.04968)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="19.886091" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="32.912468" y="18.447205">
+0.155
 </text>
 </g>
-<g class="bar" transform="translate(0,243.3887)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="72.827805" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="86.90547" y="9.867109">
-0.666
+<g class="bar" transform="translate(0,209.06831)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="28.995203" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="42.021584" y="18.447205">
+0.226
 </text>
 </g>
-<g class="bar" transform="translate(0,353.02325)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="44.72458" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="58.80225" y="9.867109">
-0.409
+<g class="bar" transform="translate(0,168.07452)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="41.31175" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="54.338127" y="18.447205">
+0.322
 </text>
 </g>
-<g class="bar" transform="translate(0,374.95016)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="40.569237" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="54.646908" y="9.867109">
-0.371
+<g class="bar" transform="translate(0,455.03107)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="10.648682" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="23.67506" y="18.447205">
+0.083
 </text>
 </g>
-<g class="bar" transform="translate(0,638.07306)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="3.3898823" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="17.467552" y="9.867109">
-0.031
+<g class="bar" transform="translate(0,86.086945)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="166.40169" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="179.42807" y="18.447205">
+1.297
 </text>
 </g>
-<g class="bar" transform="translate(0,528.43854)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="14.106284" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="28.183954" y="9.867109">
-0.129
+<g class="bar" transform="translate(0,578.01245)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="6.671463" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="19.697842" y="18.447205">
+0.052
 </text>
 </g>
-<g class="bar" transform="translate(0,331.09634)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="46.58354" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="60.661213" y="9.867109">
-0.426
+<g class="bar" transform="translate(0,127.080734)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="155.1115" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="168.13788" y="18.447205">
+1.209
 </text>
 </g>
-<g class="bar" transform="translate(0,572.29236)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="11.809914" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="25.887585" y="9.867109">
-0.108
+<g class="bar" transform="translate(0,619.0062)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="5.388489" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="18.414867" y="18.447205">
+0.042
 </text>
 </g>
-<g class="bar" transform="translate(0,287.24252)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="52.37915" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="66.45682" y="9.867109">
-0.479
-</text>
-</g>
-<g class="bar" transform="translate(0,506.51163)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="15.6372" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="29.71487" y="9.867109">
-0.143
-</text>
-</g>
-<g class="bar" transform="translate(0,177.60797)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="146.85847" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="160.93614" y="9.867109">
-1.343
-</text>
-</g>
-<g class="bar" transform="translate(0,46.04651)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="522.26056" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="536.33826" y="9.867109">
-4.776
-</text>
-</g>
-<g class="bar" transform="translate(0,418.804)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="29.415432" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="43.493103" y="9.867109">
-0.269
-</text>
-</g>
-<g class="bar" transform="translate(0,616.1462)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="5.0301476" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="19.107819" y="9.867109">
-0.046
-</text>
-</g>
-<g class="bar" transform="translate(0,594.2193)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="11.153807" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="25.231476" y="9.867109">
-0.102
-</text>
-</g>
-<g class="bar" transform="translate(0,221.46179)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="79.17016" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="93.247826" y="9.867109">
-0.724
-</text>
-</g>
-<g class="bar" transform="translate(0,155.68106)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="175.61778" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="189.69545" y="9.867109">
-1.606
-</text>
-</g>
-<g class="bar" transform="translate(0,111.82724)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="223.18549" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="237.26315" y="9.867109">
-2.041
-</text>
-</g>
-<g class="bar" transform="translate(0,440.7309)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="25.806849" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="39.884518" y="9.867109">
-0.236
-</text>
-</g>
-<g class="bar" transform="translate(0,550.3654)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="12.46602" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="26.54369" y="9.867109">
-0.114
-</text>
-</g>
-<g class="bar" transform="translate(0,309.16943)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="48.11446" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="62.19213" y="9.867109">
-0.44
-</text>
-</g>
-<g class="bar" transform="translate(0,89.90033)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="256.53757" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="270.61523" y="9.867109">
-2.346
-</text>
-</g>
-<g class="bar" transform="translate(0,24.119598)">
-<rect fill="#1f77b4" height="19.734219" shape-rendering="crispEdges" width="652.279" x="2.0776699" y="0"/>
-<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="666.3567" y="9.867109">
-5.965
+<g class="bar" transform="translate(0,250.0621)">
+<rect fill="#1f77b4" height="36.89441" shape-rendering="crispEdges" width="27.71223" x="1.0263789" y="0"/>
+<text dy=".35em" fill="#333" font-family="sans-serif" font-size="14px" text-anchor="start" x="40.73861" y="18.447205">
+0.216
 </text>
 </g>
 </g>

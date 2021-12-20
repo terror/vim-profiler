@@ -1,38 +1,47 @@
 // stdlib
-pub use std::{
+pub(crate) use std::{
   collections::HashMap,
   env,
   fmt::{self, Display, Formatter},
   fs,
-  io::{self, prelude::*},
-  iter,
+  io::{self},
+  iter, num,
   path::PathBuf,
+  process,
   process::{Command as Cmd, Stdio},
 };
 
 // dependencies
-pub use {
+pub(crate) use {
   charts::{Chart, HorizontalBarView, ScaleBand, ScaleLinear},
   csv::Writer,
   env_logger::{self},
   log::info,
-  regex::{Regex, RegexBuilder},
+  regex::RegexBuilder,
   snafu::{ResultExt, Snafu},
   structopt::StructOpt,
 };
 
-// modules
-pub(crate) use crate::{error, utils};
-
 // structs and enums
-pub use crate::{
-  command::Command, error::Error, export::Export, opt::Opt, plugin::Plugin, plugins::Plugins,
-  printer::Printer, worker::Worker,
+pub(crate) use crate::{
+  command::Command,
+  error::{self, Error},
+  opt::Opt,
+  plugin::Plugin,
+  plugins::Plugins,
+  printer::Printer,
+  worker::Worker,
+};
+
+// functions
+pub(crate) use crate::{
+  export::{plot, write},
+  utils::repeat,
 };
 
 // type aliases
-pub type Result<T, E = Error> = std::result::Result<T, E>;
+pub(crate) type Result<T, E = Error> = std::result::Result<T, E>;
 
 // test dependencies
 #[cfg(test)]
-pub use {float_cmp::approx_eq, textwrap::dedent};
+pub(crate) use {float_cmp::approx_eq, textwrap::dedent};

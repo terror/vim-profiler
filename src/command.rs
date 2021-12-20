@@ -1,7 +1,7 @@
 use crate::common::*;
 
 #[derive(Debug)]
-pub enum Command {
+pub(crate) enum Command {
   Vim,
   Neovim,
 }

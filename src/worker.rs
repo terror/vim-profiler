@@ -1,7 +1,7 @@
 use crate::common::*;
 
 #[derive(Debug)]
-pub struct Worker {
+pub(crate) struct Worker {
   command: Command,
   iter:    i64,
   sys:     bool,
@@ -39,7 +39,7 @@ impl Worker {
       .as_ref()
       .unwrap_or(&PathBuf::new())
       .to_str()
-      .unwrap()
+      .unwrap_or("")
       .to_owned();
 
     for _ in 0..self.iter {
@@ -55,7 +55,7 @@ impl Worker {
         .spawn()
         .context(error::StartupTime)?;
 
-      child.wait().unwrap();
+      child.wait()?;
 
       let plugins = self.parse()?;
 
@@ -81,20 +81,24 @@ impl Worker {
   pub fn parse(&self) -> Result<HashMap<String, f64>> {
     let content = fs::read_to_string("vim.log").context(error::ReadLog)?;
 
+    // In case the log contains windows-style path separators, they get replaced
+    // with unix-style path separators. This saves us from a more complicated regex
+    // pattern later on.
+    let content = content.replace("\\", "/");
+
     if let Some(plugin_directory) = self.plugin_directory(&content)? {
       let re = RegexBuilder::new(&format!(
         r"^\d+.\d+\s+\d+.\d+\s+(\d+.\d+): sourcing {}/([^/]+)/",
         plugin_directory
       ))
       .multi_line(true)
-      .build()
-      .unwrap();
+      .build()?;
 
       let mut plugins = HashMap::new();
       for capture in re.captures_iter(&content) {
         if let (Some(time), Some(plugin)) = (capture.get(1), capture.get(2)) {
           *plugins.entry(plugin.as_str().to_owned()).or_insert(0.0) +=
-            time.as_str().parse::<f64>().unwrap();
+            time.as_str().parse::<f64>()?;
         }
       }
 
@@ -105,13 +109,12 @@ impl Worker {
             dir
           ))
           .multi_line(true)
-          .build()
-          .unwrap();
+          .build()?;
 
           for capture in re.captures_iter(&content) {
             if let (Some(time), Some(plugin)) = (capture.get(1), capture.get(2)) {
               *plugins.entry(plugin.as_str().to_owned()).or_insert(0.0) +=
-                time.as_str().parse::<f64>().unwrap();
+                time.as_str().parse::<f64>()?;
             }
           }
         }
@@ -132,7 +135,7 @@ impl Worker {
   pub fn plugin_directory(&self, content: &str) -> Result<Option<String>> {
     let re = RegexBuilder::new(
       r"^\d+.\d+\s+\d+.\d+\s+\d+.\d+: sourcing (.+?)/(?:[^/]+/)(?:autoload|ftdetect|plugin|syntax)/[^/]+",
-    ).multi_line(true).build().unwrap();
+    ).multi_line(true).build()?;
 
     let mut counts = HashMap::new();
     for capture in re.captures_iter(content) {
@@ -161,9 +164,10 @@ impl Worker {
 #[cfg(test)]
 mod tests {
   use super::*;
+  use std::io::prelude::*;
 
   #[test]
-  fn plugin_directory() {
+  fn plugin_directory() -> Result<()> {
     let content = r#"
       042.203  011.313  010.704: sourcing /usr/local/Cellar/neovim/0.5.0/share/nvim/runtime/filetype.vim
       065.646  001.389  000.393: sourcing /usr/local/Cellar/neovim/0.5.0/share/nvim/runtime/syntax/syntax.vim
@@ -174,20 +178,24 @@ mod tests {
     "#;
 
     let worker = Worker::new(Command::Vim, 1, false, None);
+
     assert_eq!(
-      worker.plugin_directory(&dedent(content)).unwrap().unwrap(),
+      worker.plugin_directory(&dedent(content))?.unwrap(),
       "/Users/.vim/plugged"
     );
+
+    Ok(())
   }
 
   #[test]
-  fn plugin_directory_empty_content() {
+  fn plugin_directory_empty_content() -> Result<()> {
     let worker = Worker::new(Command::Vim, 1, false, None);
-    assert!(worker.plugin_directory("").unwrap().is_none());
+    assert!(worker.plugin_directory("")?.is_none());
+    Ok(())
   }
 
   #[test]
-  fn parse() {
+  fn parse() -> Result<()> {
     let content = r#"
       038.356  000.029  000.029: sourcing /Users/.vim/plugged/vim-prettier/ftdetect/graphql.vim
       039.955  000.028  000.028: sourcing /Users/.vim/plugged/vim-polyglot/ftdetect/polyglot.vim
@@ -202,18 +210,16 @@ mod tests {
       ("rust.vim", 0.048),
     ];
 
-    let mut file = fs::File::create("vim.log").unwrap();
-    file.write_all(dedent(content).as_bytes()).unwrap();
+    let mut file = fs::File::create("vim.log")?;
+    file.write_all(dedent(content).as_bytes())?;
 
-    let worker = Worker::new(Command::Vim, 1, false, None);
-    let data = worker.parse().unwrap();
-
-    println!("{:?}", data);
-
+    let data = Worker::new(Command::Vim, 1, false, None).parse()?;
     for (key, value) in cases {
       assert!(approx_eq!(f64, data[key], value, ulps = 2));
     }
 
-    fs::remove_file("vim.log").unwrap();
+    fs::remove_file("vim.log")?;
+
+    Ok(())
   }
 }
