@@ -57,7 +57,7 @@ impl Opt {
       .run()?
       .sort(self.reverse);
 
-    if !self.export.is_some() && !self.plot.is_some() {
+    if self.export.is_none() && self.plot.is_none() {
       Printer::new(self.reverse, self.count, self.precision).summary(&plugins);
       return Ok(());
     }

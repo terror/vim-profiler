@@ -33,9 +33,9 @@ impl Printer {
     for (i, plugin) in plugins.iter().enumerate() {
       println!(
         "{} {} {:10}",
-        format!("{:<1$}", i + 1, plugins.len().to_string().len() + 2),
-        format!("{:1$}", plugin.name, &plugins.len_largest()),
-        format!("{:.1$}", plugin.average(), self.prec.unwrap_or(2_usize))
+        format_args!("{:<1$}", i + 1, plugins.len().to_string().len() + 2),
+        format_args!("{:1$}", plugin.name, &plugins.len_largest()),
+        format_args!("{:.1$}", plugin.average(), self.prec.unwrap_or(2_usize))
       );
     }
 
