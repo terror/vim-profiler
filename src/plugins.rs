@@ -1,6 +1,6 @@
 use crate::common::*;
 
-pub trait Plugins {
+pub(crate) trait Plugins {
   fn sort(&mut self, reversed: bool) -> Vec<Plugin>;
   fn max(&self) -> f64;
   fn min(&self) -> f64;

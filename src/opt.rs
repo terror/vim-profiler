@@ -2,7 +2,7 @@ use crate::common::*;
 
 #[derive(Debug, StructOpt)]
 #[structopt(name = "vim-profiler", about = "A vim profiling tool.")]
-pub struct Opt {
+pub(crate) struct Opt {
   #[structopt(short, long, parse(try_from_str = Command::parse), default_value = "vim")]
   /// The command to run, e.g vim or neovim.
   command: Command,

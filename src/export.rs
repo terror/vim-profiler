@@ -1,6 +1,6 @@
 use crate::common::*;
 
-pub fn write(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
+pub(crate) fn write(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
   let mut writer = Writer::from_path(path.clone())?;
 
   writer.write_record(&["Plugin", "Max", "Min", "Median", "Average", "Deviation"])?;
@@ -23,7 +23,7 @@ pub fn write(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
   Ok(())
 }
 
-pub fn plot(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
+pub(crate) fn plot(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
   let plugins = plugins.to_vec();
 
   let (width, height, top, right, bottom, left) = (1200, 800, 90, 10, 50, 120);

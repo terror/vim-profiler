@@ -1,7 +1,7 @@
 use crate::common::*;
 
 #[derive(Debug)]
-pub struct Printer {
+pub(crate) struct Printer {
   reverse: bool,
   count:   Option<usize>,
   prec:    Option<usize>,

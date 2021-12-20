@@ -1,7 +1,7 @@
 use crate::common::*;
 
 #[derive(Debug)]
-pub struct Worker {
+pub(crate) struct Worker {
   command: Command,
   iter:    i64,
   sys:     bool,

@@ -2,7 +2,7 @@
 use crate::common::*;
 
 #[derive(Debug, Clone)]
-pub struct Plugin {
+pub(crate) struct Plugin {
   pub name:  String,
   pub times: Vec<f64>,
 }

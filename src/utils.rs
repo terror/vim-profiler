@@ -1,7 +1,7 @@
 use crate::common::*;
 
 /// Repeats the string `s`, `n` times.
-pub fn repeat(s: &str, n: usize) -> String {
+pub(crate) fn repeat(s: &str, n: usize) -> String {
   iter::repeat(s).take(n).collect::<Vec<_>>().join("")
 }
 
