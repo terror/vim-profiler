@@ -38,10 +38,10 @@ FLAGS:
 OPTIONS:
     -c, --command <command>        The command to run, e.g vim or neovim [default: vim]
     -n, --count <count>            The number of plugins to list in the output
-    -e, --export <export>          Export the results to a CSV file
+    -e, --export <path>            Export the results to a CSV file
     -f, --file <file>              A file to open
     -i, --iter <iter>              The number of iterations
-    -p, --plot <plot>              Plot the data and save it to a SVG file
+    -p, --plot <path>              Plot the data and save it to a SVG file
     -x, --precision <precision>    Precision in the output
 ```
 
