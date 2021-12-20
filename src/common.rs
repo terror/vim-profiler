@@ -1,7 +1,9 @@
 // stdlib
 pub(crate) use std::{
   collections::HashMap,
-  env, fmt::{self, Display, Formatter}, fs,
+  env,
+  fmt::{self, Display, Formatter},
+  fs,
   io::{self},
   iter, num,
   path::PathBuf,
