@@ -1,5 +1,13 @@
 ## Changelog
 
+## [0.0.4] - 2021-12-20
+
+### Added
+- Better error handling
+
+### Fixed
+- Windows path regex
+
 ## [0.0.3] - 2021-07-28
 
 ### Added
