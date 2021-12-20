@@ -4,6 +4,8 @@
 
 ### Added
 - Better error handling
+- Minor test restructure
+- Usage of pub(crate)
 
 ### Fixed
 - Windows path regex
