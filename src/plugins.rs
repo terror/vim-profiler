@@ -60,7 +60,7 @@ mod tests {
     ]
     .iter()
     .map(|(a, b)| Plugin {
-      name:  a.to_owned(),
+      name: a.to_owned(),
       times: b.to_owned(),
     })
     .collect()

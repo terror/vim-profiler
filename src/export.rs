@@ -3,7 +3,14 @@ use crate::common::*;
 pub(crate) fn write(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
   let mut writer = Writer::from_path(path.clone())?;
 
-  writer.write_record(&["Plugin", "Max", "Min", "Median", "Average", "Deviation"])?;
+  writer.write_record(&[
+    "Plugin",
+    "Max",
+    "Min",
+    "Median",
+    "Average",
+    "Deviation",
+  ])?;
 
   for plugin in plugins.iter() {
     writer.write_record(&[

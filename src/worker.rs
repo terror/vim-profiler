@@ -3,13 +3,18 @@ use crate::common::*;
 #[derive(Debug)]
 pub(crate) struct Worker {
   command: Command,
-  iter:    i64,
-  sys:     bool,
-  file:    Option<PathBuf>,
+  iter: i64,
+  sys: bool,
+  file: Option<PathBuf>,
 }
 
 impl Worker {
-  pub fn new(command: Command, iter: i64, sys: bool, file: Option<PathBuf>) -> Self {
+  pub fn new(
+    command: Command,
+    iter: i64,
+    sys: bool,
+    file: Option<PathBuf>,
+  ) -> Self {
     Self {
       command,
       iter,
@@ -112,7 +117,8 @@ impl Worker {
           .build()?;
 
           for capture in re.captures_iter(&content) {
-            if let (Some(time), Some(plugin)) = (capture.get(1), capture.get(2)) {
+            if let (Some(time), Some(plugin)) = (capture.get(1), capture.get(2))
+            {
               *plugins.entry(plugin.as_str().to_owned()).or_insert(0.0) +=
                 time.as_str().parse::<f64>()?;
             }

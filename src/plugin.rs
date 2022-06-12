@@ -3,7 +3,7 @@ use crate::common::*;
 
 #[derive(Debug, Clone)]
 pub(crate) struct Plugin {
-  pub name:  String,
+  pub name: String,
   pub times: Vec<f64>,
 }
 
@@ -65,16 +65,23 @@ mod tests {
 
   #[derive(Debug)]
   pub struct Fixture {
-    pub key:       String,
-    pub average:   f64,
-    pub median:    f64,
+    pub key: String,
+    pub average: f64,
+    pub median: f64,
     pub deviation: f64,
-    pub min:       f64,
-    pub max:       f64,
+    pub min: f64,
+    pub max: f64,
   }
 
   impl Fixture {
-    pub fn new(key: String, average: f64, median: f64, deviation: f64, min: f64, max: f64) -> Self {
+    pub fn new(
+      key: String,
+      average: f64,
+      median: f64,
+      deviation: f64,
+      min: f64,
+      max: f64,
+    ) -> Self {
       Self {
         key,
         average,
@@ -126,7 +133,7 @@ mod tests {
       plugins.insert(
         a.to_owned(),
         Plugin {
-          name:  a.to_owned(),
+          name: a.to_owned(),
           times: b.to_owned(),
         },
       );
