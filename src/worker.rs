@@ -89,7 +89,7 @@ impl Worker {
     // In case the log contains windows-style path separators, they get replaced
     // with unix-style path separators. This saves us from a more complicated regex
     // pattern later on.
-    let content = content.replace("\\", "/");
+    let content = content.replace('\\', "/");
 
     if let Some(plugin_directory) = self.plugin_directory(&content)? {
       let re = RegexBuilder::new(&format!(
