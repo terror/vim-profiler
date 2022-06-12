@@ -3,8 +3,8 @@ use crate::common::*;
 #[derive(Debug)]
 pub(crate) struct Printer {
   reverse: bool,
-  count:   Option<usize>,
-  prec:    Option<usize>,
+  count: Option<usize>,
+  prec: Option<usize>,
 }
 
 impl Printer {

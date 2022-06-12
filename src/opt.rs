@@ -53,9 +53,10 @@ impl Opt {
     env_logger::init();
     info!("Starting run ...");
 
-    let plugins = Worker::new(self.command, self.iter.unwrap_or(1), self.sys, self.file)
-      .run()?
-      .sort(self.reverse);
+    let plugins =
+      Worker::new(self.command, self.iter.unwrap_or(1), self.sys, self.file)
+        .run()?
+        .sort(self.reverse);
 
     if self.export.is_none() && self.plot.is_none() {
       Printer::new(self.reverse, self.count, self.precision).summary(&plugins);
