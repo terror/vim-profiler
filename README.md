@@ -1,7 +1,8 @@
 ## vim-profiler 🕒
 
-[![Build](https://github.com/terror/vim-profiler/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/terror/zk/actions/workflows/build.yaml)
+[![CI](https://github.com/terror/vim-profiler/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/terror/zk/actions/workflows/ci.yaml)
 [![crates.io](https://shields.io/crates/v/vim-profiler.svg)](https://crates.io/crates/vim-profiler)
+[![dependency status](https://deps.rs/repo/github/terror/vim-profiler/status.svg)](https://deps.rs/repo/github/terror/vim-profiler)
 
 `vim-profiler` is a wrapper around the `(n)vim --startuptime` command, written in Rust. The binary is called
 `vp` and has only been tested on a Unix based system.

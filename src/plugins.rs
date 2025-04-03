@@ -53,7 +53,7 @@ mod tests {
   use super::*;
 
   fn setup() -> Vec<Plugin> {
-    vec![
+    [
       (String::from("vim-rooter"), vec![2.0, 5.2, 9.2, 10.5]),
       (String::from("vim-prettier"), vec![4.0, 5.3, 3.5, 19.2]),
       (String::from("vim-just"), vec![5.0, 2.0, 4.2, 7.8]),
