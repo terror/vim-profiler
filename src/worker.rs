@@ -108,7 +108,7 @@ impl Worker {
       }
 
       if self.sys {
-        for dir in &vec!["/usr", "/usr/local"] {
+        for dir in &["/usr", "/usr/local"] {
           let re = RegexBuilder::new(&format!(
             r"^\d+.\d+\s+\d+.\d+\s+(\d+.\d+): sourcing {}/.+/([^/]+.vim)\n",
             dir

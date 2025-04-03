@@ -1,46 +1,60 @@
-default: fmt ci profile
+set dotenv-load
 
-ci: build test clippy fmt-check
+default:
+	just --list
 
+alias f := fmt
+alias r := run
+alias t := test
+
+all: build test clippy fmt-check
+
+[group: 'misc']
 build:
   cargo build
 
-test:
-  cargo test
-
-clippy:
-  cargo clippy --all-targets --all-features
-
-fmt-check:
-  cargo fmt --all -- --check
-  @echo formatting check done
-
-run *args:
-  cargo run -- --{{args}}
-
-fmt:
-  cargo fmt --all
-
+[group: 'check']
 check:
  cargo check
 
-la:
-  actionlint
+[group: 'check']
+ci: test clippy forbid
+  cargo +nightly fmt --all -- --check
+  cargo update --locked --package vim-profiler
 
+[group: 'check']
+clippy:
+  cargo clippy --all --all-targets
+
+[group: 'format']
+fmt:
+  cargo +nightly fmt
+
+[group: 'format']
+fmt-check:
+  cargo +nightly fmt --all -- --check
+
+[group: 'check']
+forbid:
+  ./bin/forbid
+
+[group: 'misc']
+install:
+  cargo install -f vim-profiler
+
+[group: 'dev']
+install-dev-deps:
+  rustup install nightly
+  rustup update nightly
+  cargo install cargo-watch
+
+[group: 'dev']
+run *args:
+  cargo run -- --{{args}}
+
+[group: 'test']
+test:
+  cargo test
+[group: 'dev']
 watch +COMMAND='test':
   cargo watch --clear --exec "{{COMMAND}}"
-
-usage:
-  cargo run -- --help | pbcopy
-
-profile *args:
-  cargo run -- -c neovim {{args}}
-
-plot:
-  cargo run -- -c neovim --plot assets/plugins.svg --verbose
-
-write:
-  cargo run -- --command neovim --iter 10 --export assets/plugins.csv --verbose
-
-install:
-  cargo install --path .

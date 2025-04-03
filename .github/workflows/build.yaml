@@ -1,12 +1,10 @@
-name: Build
+name: CI
 
 on:
-  push:
-    branches:
-    - master
-    tags:
-    - '*'
   pull_request:
+    branches:
+    - '*'
+  push:
     branches:
     - master
 
@@ -15,84 +13,69 @@ defaults:
     shell: bash
 
 env:
-  CACHE_KEY: 0
+  RUSTFLAGS: --deny warnings
 
 jobs:
-  all:
-    name: All
-
-    strategy:
-      matrix:
-        os:
-        - macos-latest
-        - ubuntu-latest
-
-    runs-on: ${{ matrix.os }}
-
-    env:
-      RUSTFLAGS: "--deny warnings"
+  lint:
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
 
-    - name: Download actionlint
-      id: actionlint
-      run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+    - uses: Swatinem/rust-cache@v2
 
-    - name: Check Github Actions Workflow
-      env:
-        SHELLCHECK_OPTS: "-e SC2006 -e SC2002 -e SC2050"
-      run: ${{ steps.actionlint.outputs.executable }} -color
+    - name: Clippy
+      run: cargo clippy --all --all-targets
 
-    # An issue with BSD Tar causes sporadic failures on macOS.
-    # c.f https://github.com/actions/cache/issues/403
-    - name: Install GNU Tar
-      if: ${{ matrix.os == 'macos-latest' }}
+    - name: Format
+      run: cargo fmt --all -- --check
+
+    - name: Install Dependencies
       run: |
-        brew install gnu-tar
-        echo /usr/local/opt/gnu-tar/libexec/gnubin > "$GITHUB_PATH"
+        sudo apt-get update
+        sudo apt-get install ripgrep shellcheck
 
-    - name: Cache
-      uses: actions/cache@v4
-      with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-          target
-        key: cargo-${{ env.CACHE_KEY }}-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
+    - name: Check for Forbidden Words
+      run: ./bin/forbid
 
-    - name: Install Nightly
-      uses: actions-rs/toolchain@v4
-      with:
-        toolchain: nightly
-        profile: minimal
-        components: rustfmt
+    - name: Check /bin scripts
+      run: shellcheck bin/*
 
-    - name: Install Clippy
+  msrv:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
+
+    - uses: Swatinem/rust-cache@v2
+
+    - name: Check
+      run: cargo check
+
+  test:
+    strategy:
+      matrix:
+        os:
+        - ubuntu-latest
+        - macos-latest
+        - windows-latest
+
+    runs-on: ${{matrix.os}}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Remove Broken WSL bash executable
+      if: ${{ matrix.os == 'windows-latest' }}
+      shell: cmd
       run: |
-        rustup component add clippy
+        takeown /F C:\Windows\System32\bash.exe
+        icacls C:\Windows\System32\bash.exe /grant administrators:F
+        del C:\Windows\System32\bash.exe
 
-    - name: Install just
-      run: |
-        if ! type -P just; then
-          git clone https://github.com/casey/just
-          cd just
-          git checkout v0.9.3
-          echo '1.51.0' > rust-toolchain
-          cargo install --path .
-        fi
+    - uses: Swatinem/rust-cache@v2
 
-    - name: Info
-      run: |
-        rustup --version
-        cargo --version
-        cargo clippy --version
-
-    - name: Ci
-      run: just ci
-
-    - name: Forbid
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: |
-        sudo apt-get install ripgrep
-        ./bin/forbid
+    - name: Test
+      run: cargo test --all
