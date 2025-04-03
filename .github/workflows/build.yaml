@@ -62,7 +62,7 @@ jobs:
         key: cargo-${{ env.CACHE_KEY }}-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
 
     - name: Install Nightly
-      uses: actions-rs/toolchain@v3
+      uses: actions-rs/toolchain@v4
       with:
         toolchain: nightly
         profile: minimal
