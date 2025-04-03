@@ -53,7 +53,7 @@ jobs:
         echo /usr/local/opt/gnu-tar/libexec/gnubin > "$GITHUB_PATH"
 
     - name: Cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.cargo/registry
@@ -62,7 +62,7 @@ jobs:
         key: cargo-${{ env.CACHE_KEY }}-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
 
     - name: Install Nightly
-      uses: actions-rs/toolchain@v1
+      uses: actions-rs/toolchain@v2
       with:
         toolchain: nightly
         profile: minimal
