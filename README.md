@@ -7,20 +7,20 @@
 `vim-profiler` is a wrapper around the `(n)vim --startuptime` command, written in Rust. The binary is called
 `vp` and has only been tested on a Unix based system.
 
-### Demo
+## Demo
 
 Here is a quick demo showcasing the main functionality of the program.
 
 [![asciicast](https://asciinema.org/a/ec3DhuwvAAoXCTs7pLdBG8JI6.svg)](https://asciinema.org/a/ec3DhuwvAAoXCTs7pLdBG8JI6)
 
-### Installation
+## Installation
 
 You can install `vim-profiler` with the rust package manager Cargo:
 ```bash
 $ cargo install vim-profiler
 ```
 
-### Usage
+## Usage
 
 ```
 vim-profiler 0.0.4
@@ -46,12 +46,12 @@ OPTIONS:
     -x, --precision <precision>    Precision in the output
 ```
 
-### Exporting results
+## Exporting results
 
 This utility allows for exporting results to either in a `.svg` file in the form
 of a plot or in a `.csv` file, where extra statistics are written.
 
-#### Plot
+### Plot
 
 The plot visualizes the start times of each plugin in your plugin directory. If
 you invoke `vp` with the `--plot` option, you will receive a plot in the form of
@@ -59,7 +59,7 @@ an SVG file in the specified path that looks something like:
 
 ![](./assets/plugins.svg)
 
-#### CSV
+### CSV
 
 The CSV file contains various other useful statistics such as:
 - The average start time across all iterations
@@ -83,7 +83,7 @@ like:
 | vim-crypto    | 2.99100  | 1.61400 | 1.81100  | 2.03940  | 0.43480   |
 | fzf.vim       | 1.83000  | 0.94600 | 1.13900  | 1.20210  | 0.26501   |
 
-### Prior Art
+## Prior Art
 
 The API is heavily inspired by the Python script that goes by the same name
 [vim-profiler](https://github.com/bchretien/vim-profiler).
