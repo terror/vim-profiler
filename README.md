@@ -57,7 +57,7 @@ The plot visualizes the start times of each plugin in your plugin directory. If
 you invoke `vp` with the `--plot` option, you will receive a plot in the form of
 an SVG file in the specified path that looks something like:
 
-![](./assets/plugins.svg)
+![](./plugins.svg)
 
 ### CSV
 
