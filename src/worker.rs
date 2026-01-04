@@ -11,7 +11,7 @@ pub(crate) struct Worker {
 impl Worker {
   /// Clean up the created `vim.log` file.
   fn clean() -> Result<()> {
-    fs::remove_file("vim.log").context(error::RemoveLog)?;
+    fs::remove_file("vim.log").context(error::RemoveLogSnafu)?;
     Ok(())
   }
 
@@ -34,7 +34,7 @@ impl Worker {
   /// 036.484  000.043  000.043: sourcing /path/to/plugin/file.vim
   ///                   ^^^^^^^                    ^^^^^^
   pub fn parse(&self) -> Result<HashMap<String, f64>> {
-    let content = fs::read_to_string("vim.log").context(error::ReadLog)?;
+    let content = fs::read_to_string("vim.log").context(error::ReadLogSnafu)?;
 
     // In case the log contains windows-style path separators, they get replaced
     // with unix-style path separators. This saves us from a more complicated regex
@@ -143,7 +143,7 @@ impl Worker {
         .arg("-c")
         .arg("q")
         .spawn()
-        .context(error::StartupTime)?;
+        .context(error::StartupTimeSnafu)?;
 
       child.wait()?;
 
