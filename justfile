@@ -19,7 +19,7 @@ check:
 
 [group: 'check']
 ci: test clippy forbid
-  cargo +nightly fmt --all -- --check
+  cargo fmt --all -- --check
   cargo update --locked --package vim-profiler
 
 [group: 'check']
@@ -28,11 +28,11 @@ clippy:
 
 [group: 'format']
 fmt:
-  cargo +nightly fmt
+  cargo fmt
 
 [group: 'format']
 fmt-check:
-  cargo +nightly fmt --all -- --check
+  cargo fmt --all -- --check
 
 [group: 'check']
 forbid:
@@ -44,17 +44,16 @@ install:
 
 [group: 'dev']
 install-dev-deps:
-  rustup install nightly
-  rustup update nightly
   cargo install cargo-watch
 
 [group: 'dev']
 run *args:
-  cargo run -- --{{args}}
+  cargo run {{ args }}
 
 [group: 'test']
 test:
   cargo test
+
 [group: 'dev']
 watch +COMMAND='test':
   cargo watch --clear --exec "{{COMMAND}}"
