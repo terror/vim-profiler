@@ -8,6 +8,7 @@ use {
   error::Error,
   export::{plot, write},
   log::info,
+  num_traits::cast::ToPrimitive,
   plugin::Plugin,
   plugins::Plugins,
   printer::Printer,
