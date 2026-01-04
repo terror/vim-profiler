@@ -2,8 +2,8 @@ use crate::common::*;
 
 #[derive(Debug)]
 pub(crate) enum Command {
-  Vim,
   Neovim,
+  Vim,
 }
 
 impl Display for Command {

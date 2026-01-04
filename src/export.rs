@@ -12,9 +12,9 @@ pub(crate) fn write(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
     "Deviation",
   ])?;
 
-  for plugin in plugins.iter() {
+  for plugin in plugins {
     writer.write_record(&[
-      plugin.name.to_owned(),
+      plugin.name.clone(),
       format!("{:.5}", plugin.max()),
       format!("{:.5}", plugin.min()),
       format!("{:.5}", plugin.median()),
@@ -43,12 +43,7 @@ pub(crate) fn plot(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
     .set_range(vec![0, width - left - right]);
 
   let y = ScaleBand::new()
-    .set_domain(
-      plugins
-        .iter()
-        .map(|plugin| plugin.name.to_owned())
-        .collect(),
-    )
+    .set_domain(plugins.iter().map(|plugin| plugin.name.clone()).collect())
     .set_range(vec![0, height - top - bottom]);
 
   let view = HorizontalBarView::new()
@@ -57,7 +52,7 @@ pub(crate) fn plot(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
     .load_data(
       &plugins
         .iter()
-        .map(|plugin| (plugin.name.to_owned(), plugin.average() as f32))
+        .map(|plugin| (plugin.name.clone(), plugin.average() as f32))
         .collect::<Vec<(String, f32)>>(),
     )
     .unwrap();

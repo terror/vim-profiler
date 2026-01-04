@@ -6,48 +6,40 @@ pub(crate) struct Opt {
   #[structopt(short, long, parse(try_from_str = Command::parse), default_value = "vim")]
   /// The command to run, e.g vim or neovim.
   command: Command,
-
-  #[structopt(short, long)]
-  /// The number of iterations.
-  iter: Option<i64>,
-
-  #[structopt(short = "x", long)]
-  /// Precision in the output.
-  precision: Option<usize>,
-
   #[structopt(short = "n", long)]
   /// The number of plugins to list in the output.
   count: Option<usize>,
-
-  #[structopt(short, long)]
-  /// Add informative messages during program execution.
-  verbose: bool,
-
-  #[structopt(short, long)]
-  /// Plot the data and save it to a SVG file
-  plot: Option<PathBuf>,
-
   #[structopt(short, long)]
   /// Export the results to a CSV file.
   export: Option<PathBuf>,
-
-  #[structopt(short, long)]
-  /// Show system plugins in the output.
-  sys: bool,
-
-  #[structopt(short, long)]
-  /// Display the plugin times in reverse order (fastest first).
-  reverse: bool,
-
   #[structopt(short, long)]
   /// A file to open
   file: Option<PathBuf>,
+  #[structopt(short, long)]
+  /// The number of iterations.
+  iter: Option<i64>,
+  #[structopt(short, long)]
+  /// Plot the data and save it to a SVG file
+  plot: Option<PathBuf>,
+  #[structopt(short = "x", long)]
+  /// Precision in the output.
+  precision: Option<usize>,
+  #[structopt(short, long)]
+  /// Display the plugin times in reverse order (fastest first).
+  reverse: bool,
+  #[structopt(short, long)]
+  /// Show system plugins in the output.
+  sys: bool,
+  #[structopt(short, long)]
+  /// Add informative messages during program execution.
+  verbose: bool,
 }
 
 impl Opt {
   pub fn run(self) -> Result<()> {
     if self.verbose {
-      env::set_var("RUST_LOG", "info");
+      // SAFETY: This is called at program startup before any other threads are spawned.
+      unsafe { env::set_var("RUST_LOG", "info") };
     }
 
     env_logger::init();

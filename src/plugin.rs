@@ -8,18 +8,17 @@ pub(crate) struct Plugin {
 }
 
 impl Plugin {
-  pub fn new(name: String, times: Vec<f64>) -> Self {
-    Self { name, times }
-  }
-
   /// Compute the average plugin start time.
   pub fn average(&self) -> f64 {
-    self.times.iter().sum::<f64>() / self.times.len() as f64
+    let len = self.times.len();
+    self.times.iter().sum::<f64>()
+      / f64::from(u32::try_from(len).unwrap_or(u32::MAX))
   }
 
   /// Compute the standard deviation among all plugin start times.
   pub fn deviation(&self) -> f64 {
     let avg = self.average();
+    let len = self.times.len();
 
     let variance = self
       .times
@@ -29,9 +28,14 @@ impl Plugin {
         diff * diff
       })
       .sum::<f64>()
-      / self.times.len() as f64;
+      / f64::from(u32::try_from(len).unwrap_or(u32::MAX));
 
     variance.sqrt()
+  }
+
+  /// Compute the longest plugin start time
+  pub fn max(&self) -> f64 {
+    self.times.iter().copied().fold(f64::NAN, f64::max)
   }
 
   /// Compute the median plugin start time.
@@ -42,20 +46,19 @@ impl Plugin {
 
     let mid = values.len() / 2;
     if values.len().is_multiple_of(2) {
-      (values[mid - 1] + values[mid]) / 2.0
+      f64::midpoint(values[mid - 1], values[mid])
     } else {
       values[mid]
     }
   }
 
-  /// Compute the longest plugin start time
-  pub fn max(&self) -> f64 {
-    self.times.iter().cloned().fold(f64::NAN, f64::max)
-  }
-
   /// Compute the shortest plugin start time
   pub fn min(&self) -> f64 {
-    self.times.iter().cloned().fold(f64::NAN, f64::min)
+    self.times.iter().copied().fold(f64::NAN, f64::min)
+  }
+
+  pub fn new(name: String, times: Vec<f64>) -> Self {
+    Self { name, times }
   }
 }
 
@@ -65,12 +68,12 @@ mod tests {
 
   #[derive(Debug)]
   pub struct Fixture {
-    pub key: String,
     pub average: f64,
-    pub median: f64,
     pub deviation: f64,
-    pub min: f64,
+    pub key: String,
     pub max: f64,
+    pub median: f64,
+    pub min: f64,
   }
 
   impl Fixture {
@@ -83,12 +86,12 @@ mod tests {
       max: f64,
     ) -> Self {
       Self {
-        key,
         average,
-        median,
         deviation,
-        min,
+        key,
         max,
+        median,
+        min,
       }
     }
   }
@@ -107,7 +110,7 @@ mod tests {
         String::from("vim-rooter"),
         6.72500,
         7.2,
-        3.355126674210677,
+        3.355_126_674_210_677,
         2.0,
         10.5,
       ),
@@ -115,7 +118,7 @@ mod tests {
         String::from("vim-prettier"),
         8.0,
         4.65,
-        6.4996153732355575,
+        6.499_615_373_235_557_5,
         3.5,
         19.2,
       ),
@@ -123,7 +126,7 @@ mod tests {
         String::from("vim-just"),
         4.75,
         4.6,
-        2.0754517580517255,
+        2.075_451_758_051_725_5,
         2.0,
         7.8,
       ),
@@ -131,10 +134,10 @@ mod tests {
 
     for (a, b) in fake {
       plugins.insert(
-        a.to_owned(),
+        a.clone(),
         Plugin {
-          name: a.to_owned(),
-          times: b.to_owned(),
+          name: a.clone(),
+          times: b.clone(),
         },
       );
     }

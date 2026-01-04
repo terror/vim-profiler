@@ -2,17 +2,17 @@ use crate::common::*;
 
 #[derive(Debug)]
 pub(crate) struct Printer {
-  reverse: bool,
   count: Option<usize>,
   prec: Option<usize>,
+  reverse: bool,
 }
 
 impl Printer {
   pub fn new(reverse: bool, count: Option<usize>, prec: Option<usize>) -> Self {
     Self {
-      reverse,
       count,
       prec,
+      reverse,
     }
   }
 
@@ -21,13 +21,10 @@ impl Printer {
 
     plugins.truncate(self.count.unwrap_or(10_usize));
 
-    let header = format!(
-      "Top {} {} (n)vim plugins.",
-      plugins.len(),
-      if self.reverse { "fastest" } else { "slowest" }
-    );
+    let order = if self.reverse { "fastest" } else { "slowest" };
+    let header = format!("Top {} {order} (n)vim plugins.", plugins.len(),);
 
-    println!("{}", header);
+    println!("{header}");
     println!("{}", repeat("=", header.len()));
 
     for (i, plugin) in plugins.iter().enumerate() {

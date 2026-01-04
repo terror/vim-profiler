@@ -1,25 +1,20 @@
 use crate::common::*;
 
 pub(crate) trait Plugins {
-  fn sort(&mut self, reversed: bool) -> Vec<Plugin>;
+  fn len_largest(&self) -> usize;
   fn max(&self) -> f64;
   fn min(&self) -> f64;
-  fn len_largest(&self) -> usize;
+  fn sort(&mut self, reversed: bool) -> Vec<Plugin>;
 }
 
 impl Plugins for Vec<Plugin> {
-  fn sort(&mut self, reversed: bool) -> Vec<Plugin> {
-    let sorted = self;
-
-    sorted.sort_by(|a, b| {
-      if reversed {
-        a.average().partial_cmp(&b.average()).unwrap()
-      } else {
-        b.average().partial_cmp(&a.average()).unwrap()
-      }
-    });
-
-    sorted.to_vec()
+  fn len_largest(&self) -> usize {
+    self
+      .iter()
+      .min_by(|a, b| b.name.len().cmp(&a.name.len()))
+      .unwrap()
+      .name
+      .len()
   }
 
   fn max(&self) -> f64 {
@@ -38,13 +33,18 @@ impl Plugins for Vec<Plugin> {
       .average()
   }
 
-  fn len_largest(&self) -> usize {
-    self
-      .iter()
-      .min_by(|a, b| b.name.len().cmp(&a.name.len()))
-      .unwrap()
-      .name
-      .len()
+  fn sort(&mut self, reversed: bool) -> Vec<Plugin> {
+    let sorted = self;
+
+    sorted.sort_by(|a, b| {
+      if reversed {
+        a.average().partial_cmp(&b.average()).unwrap()
+      } else {
+        b.average().partial_cmp(&a.average()).unwrap()
+      }
+    });
+
+    sorted.clone()
   }
 }
 
@@ -60,8 +60,8 @@ mod tests {
     ]
     .iter()
     .map(|(a, b)| Plugin {
-      name: a.to_owned(),
-      times: b.to_owned(),
+      name: a.clone(),
+      times: b.clone(),
     })
     .collect()
   }
