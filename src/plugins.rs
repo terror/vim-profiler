@@ -1,4 +1,4 @@
-use crate::common::*;
+use super::*;
 
 pub(crate) trait Plugins {
   fn len_largest(&self) -> usize;

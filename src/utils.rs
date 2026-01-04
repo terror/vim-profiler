@@ -1,4 +1,4 @@
-use crate::common::*;
+use super::*;
 
 /// Repeats the string `s`, `n` times.
 pub(crate) fn repeat(s: &str, n: usize) -> String {
