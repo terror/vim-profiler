@@ -1,10 +1,10 @@
 use crate::common::*;
 
+mod arguments;
 mod command;
 mod common;
 mod error;
 mod export;
-mod opt;
 mod plugin;
 mod plugins;
 mod printer;
@@ -12,7 +12,7 @@ mod utils;
 mod worker;
 
 fn main() {
-  match Opt::from_args().run() {
+  match Arguments::parse().run() {
     Ok(()) => {}
     Err(e) => {
       eprintln!("{e}");

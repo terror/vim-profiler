@@ -13,18 +13,18 @@ pub(crate) use std::{
 
 pub(crate) use {
   charts::{Chart, HorizontalBarView, ScaleBand, ScaleLinear},
+  clap::Parser,
   csv::Writer,
   env_logger::{self},
   log::info,
   regex::RegexBuilder,
   snafu::{ResultExt, Snafu},
-  structopt::StructOpt,
 };
 
 pub(crate) use crate::{
+  arguments::Arguments,
   command::Command,
   error::{self, Error},
-  opt::Opt,
   plugin::Plugin,
   plugins::Plugins,
   printer::Printer,
