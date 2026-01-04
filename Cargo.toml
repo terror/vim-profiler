@@ -15,14 +15,16 @@ resolver = "2"
 name = "vp"
 path = "src/main.rs"
 
-[lints.rust]
+[workspace]
+members = [".", "crates/*"]
+
+[workspace.lints.rust]
 mismatched_lifetime_syntaxes = "allow"
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(fuzzing)'] }
 
-[lints.clippy]
+[workspace.lints.clippy]
 all = { level = "deny", priority = -1 }
 arbitrary-source-item-ordering = "deny"
-cast_possible_truncation = "allow"
 enum_glob_use = "allow"
 ignore_without_reason = "allow"
 needless_pass_by_value = "allow"
