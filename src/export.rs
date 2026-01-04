@@ -1,4 +1,4 @@
-use crate::common::*;
+use super::*;
 
 pub(crate) fn write(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
   let mut writer = Writer::from_path(path.clone())?;

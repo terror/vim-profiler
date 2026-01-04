@@ -1,4 +1,4 @@
-use crate::common::*;
+use super::*;
 
 #[derive(Debug, Parser)]
 #[command(name = "vim-profiler", about = "A vim profiling tool.")]

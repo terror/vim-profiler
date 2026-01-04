@@ -1,5 +1,5 @@
 #[allow(unused_imports)]
-use crate::common::*;
+use super::*;
 
 #[derive(Debug, Clone)]
 pub(crate) struct Plugin {
