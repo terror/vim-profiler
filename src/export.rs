@@ -37,8 +37,8 @@ pub(crate) fn plot(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
 
   let x = ScaleLinear::new()
     .set_domain(vec![
-      (plugins.min() - 0.05) as f32,
-      (plugins.max() + 1.0) as f32,
+      (plugins.min() - 0.05).to_f32().unwrap_or_default(),
+      (plugins.max() + 1.0).to_f32().unwrap_or_default(),
     ])
     .set_range(vec![0, width - left - right]);
 
@@ -52,7 +52,12 @@ pub(crate) fn plot(path: PathBuf, plugins: &[Plugin]) -> Result<(), Error> {
     .load_data(
       &plugins
         .iter()
-        .map(|plugin| (plugin.name.clone(), plugin.average() as f32))
+        .map(|plugin| {
+          (
+            plugin.name.clone(),
+            plugin.average().to_f32().unwrap_or_default(),
+          )
+        })
         .collect::<Vec<(String, f32)>>(),
     )
     .unwrap();
