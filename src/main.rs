@@ -25,6 +25,7 @@ use {
     path::PathBuf,
     process,
     process::{Command as Cmd, Stdio},
+    str::FromStr,
   },
   utils::repeat,
   worker::Worker,

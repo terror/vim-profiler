@@ -3,7 +3,7 @@ use super::*;
 #[derive(Debug, Parser)]
 #[command(name = "vim-profiler", about = "A vim profiling tool.")]
 pub(crate) struct Arguments {
-  #[arg(short, long, value_parser = Command::parse, default_value = "vim")]
+  #[arg(short, long, default_value = "vim")]
   /// The command to run, e.g vim or neovim.
   command: Command,
   #[arg(short = 'n', long)]
