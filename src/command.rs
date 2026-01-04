@@ -15,13 +15,15 @@ impl Display for Command {
   }
 }
 
-impl Command {
-  pub fn parse(cmd: &str) -> Result<Self> {
-    match cmd {
+impl FromStr for Command {
+  type Err = Error;
+
+  fn from_str(value: &str) -> Result<Self> {
+    match value {
       "vim" => Ok(Command::Vim),
       "nvim" | "neovim" => Ok(Command::Neovim),
       _ => Err(Error::InvalidCommand {
-        cmd: cmd.to_owned(),
+        cmd: value.to_owned(),
       }),
     }
   }
