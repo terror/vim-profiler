@@ -22,7 +22,7 @@ impl Printer {
     plugins.truncate(self.count.unwrap_or(10_usize));
 
     let order = if self.reverse { "fastest" } else { "slowest" };
-    let header = format!("Top {} {order} (n)vim plugins.", plugins.len(),);
+    let header = format!("Top {} {order} (n)vim plugins.", plugins.len());
 
     println!("{header}");
     println!("{}", repeat("=", header.len()));
